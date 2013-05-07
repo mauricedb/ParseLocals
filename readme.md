@@ -1,10 +1,13 @@
 ParseLocals.prg
+===============
 
 Installation:
+-------------
 Do install just run the ParseLocals.prg in your Visual FoxPro startup program.
 It will install itself at the bottom of the Tools menu. 
 
 Usage:
+------
 Open the source code you want to check in the editor.
 If you have been editing there is no need save. ParseLocals copies the code from the editor not the file from disk.
 Select "Check local declarations" from the Tools menu or hit the hotkey of Alt+L.
@@ -21,7 +24,7 @@ The parser is used at design time so has no knowledge of the run time environmen
 
 The ParseLocal parser serves the same purpose as using the _VFP.LanguageOptions = 1 setting in detecting variables that aren't declared. The main difference between the two is the approach taken. LanguageOptions is a runtime check where you must run the code to check it and each undeclared variable generates a warning message in the debug output window. ParseLocals is a design time check where the code is checked while the developer is editing. Each approach has pros and cons:
 
-LanguageOptions
+### LanguageOptions
 Pros:
 -	It knows about private and public variables and macro execution so all the errors reported are guaranteed to be errors.
 Cons:
@@ -29,7 +32,7 @@ Cons:
 -	The developer must run the code, check for errors, edit the code and restart the application. This makes for a much slower test cycle.
 -	There is no check for variables that are declared but never used.
 
-ParseLocals
+### ParseLocals
 Pros:
 -	All code is checked even if it is never executed. This helps finding typos in error handling code that is normally not executed.
 -	The developer only needs to hit the hot key in the editor to check the current code and see all errors. This makes for a much faster test and fix cycle.
@@ -42,8 +45,7 @@ Cons:
 Note: The parser assumes the code is valid Visual FoxPro source code. If the code isn't valid errors may occur.
 
 
-Any feedback will be appreciated, email me at mauricedb@computer.org 
-Future updates will be posted on my web site: http://www.TheProblemSolver.nl
+Any feedback will be appreciated, email me at maurice.de.beijer@gmail.com
 
 Copyright.
 All source code and documentation contained in this zip file has been 
