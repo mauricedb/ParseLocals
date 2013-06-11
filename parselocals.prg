@@ -391,7 +391,7 @@ For lnI = 0 to lnCount - 1
 EndFor
 
 * Add the FOR and FOR EACH assignments
-loRegExp.Pattern = '^For +(?:Each +)?(\w*)'
+loRegExp.Pattern = '^For +(?:Each +)?(?:m\.)?(\w*)'
 loMatches = loRegExp.Execute(lcSection)
 lnCount = loMatches.Count
 For lnI = 0 to lnCount - 1
@@ -457,7 +457,7 @@ For lnI = 0 to lnCount - 1
 	This.AddAssignedVar(lcVar, c_Variable)
 ENDFOR
 
-* 2007-02-07 Added on request of Kurt Graßl
+* 2007-02-07 Added on request of Kurt Graï¿½l
 * Find vars using m.-notation
 loRegExp.Pattern = '([a-zA-Z0-9_]*m\.)([a-zA-Z0-9_]*)'
 loMatches = loRegExp.Execute(lcSection)
