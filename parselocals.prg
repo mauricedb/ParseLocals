@@ -410,6 +410,9 @@ For lnI = 0 to lnCount - 1
 	For lnVar = 1 to lnCount
 		lcVar = laTemp1[lnVar]
 		DO Case
+		Case Lower(Left(lcVar, 2)) = 'm.'
+			* We get rid of m. prefix
+			This.AddAssignedVar(Substr(lcVar, 3), c_Variable)
 		Case At('.', lcVar) > 0 and Lower(Left(lcVar, 2)) <> 'm.'
 			* This is an asignment of an object property
 		Case Left(lcVar, 1) $ '(&'
@@ -457,7 +460,7 @@ For lnI = 0 to lnCount - 1
 	This.AddAssignedVar(lcVar, c_Variable)
 ENDFOR
 
-* 2007-02-07 Added on request of Kurt Graßl
+* 2007-02-07 Added on request of Kurt Graï¿½l
 * Find vars using m.-notation
 loRegExp.Pattern = '([a-zA-Z0-9_]*m\.)([a-zA-Z0-9_]*)'
 loMatches = loRegExp.Execute(lcSection)
